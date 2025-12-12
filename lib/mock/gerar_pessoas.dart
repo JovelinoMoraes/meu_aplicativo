@@ -10,7 +10,7 @@ List<Pessoa> gerarPessoas(int quantidade) {
       id: index,
       nome: faker.person.name(),
       altura: Random().nextInt(200),
-      peso: Random().nextDouble(),
+      peso: Faker().randomGenerator.decimal(min: 50, scale: 50),
     ),
   );
 }
