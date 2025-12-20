@@ -11,7 +11,7 @@ class CustomPersonTile extends StatelessWidget {
     return CustomTile(
       color: Colors.lightBlue,
       leading: Text("id: ${pessoa.id}"),
-      title: Text("Nome: ${pessoa.nome}"),
+      title: Text("Nome: ${pessoa.nome}", style: TextStyle(fontSize: 16)),
       subTitle: Text("Peso: ${pessoa.peso.toStringAsFixed(1)} kg"),
       trailing: Text("Altura: ${pessoa.altura} cm"),
     );

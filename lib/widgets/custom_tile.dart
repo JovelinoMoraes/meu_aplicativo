@@ -18,12 +18,33 @@ class CustomTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        leading,
-        Column(children: [title, subTitle]),
-        trailing,
-      ],
+    final gap = SizedBox(height: 8, width: 16);
+    return Container(
+      padding: EdgeInsets.all(16),
+      margin: EdgeInsets.all(2),
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              leading,
+              gap,
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [title, gap, subTitle],
+              ),
+            ],
+          ),
+          trailing,
+        ],
+      ),
     );
   }
 }
