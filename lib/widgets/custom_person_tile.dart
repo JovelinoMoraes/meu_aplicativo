@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meu_aplicativo/models/pessoa.dart';
 import 'package:meu_aplicativo/widgets/custom_tile.dart';
+import 'package:meu_aplicativo/widgets/pessoaDialog.dart';
 
 class CustomPersonTile extends StatelessWidget {
   final Pessoa pessoa;
@@ -9,6 +10,14 @@ class CustomPersonTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomTile(
+      onTap: () {
+        showDialog(
+          context: context,
+          builder: (context) {
+            return PessoaDialog(pessoa: pessoa);
+          },
+        );
+      },
       color: Colors.lightBlue,
       leading: Text("id: ${pessoa.id}"),
       title: Text("Nome: ${pessoa.nome}", style: TextStyle(fontSize: 16)),

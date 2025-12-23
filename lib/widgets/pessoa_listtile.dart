@@ -1,5 +1,6 @@
 import '../../models/pessoa.dart';
 import 'package:flutter/material.dart';
+import 'package:meu_aplicativo/extensions/extensions.dart';
 
 class PessoaListTile extends StatelessWidget {
   final Pessoa pessoa;
@@ -12,8 +13,8 @@ class PessoaListTile extends StatelessWidget {
       child: ListTile(
         leading: Text("id: ${pessoa.id}"),
         title: Text("Nome: ${pessoa.nome}"),
-        subtitle: Text("Peso: ${pessoa.peso.toStringAsFixed(1)} kg"),
-        trailing: Text("Altura: ${pessoa.altura} cm"),
+        subtitle: Text("Peso: ${pessoa.peso.paraPeso()}"),
+        trailing: Text("Altura: ${pessoa.altura.paraAltura()}"),
       ),
     );
   }
