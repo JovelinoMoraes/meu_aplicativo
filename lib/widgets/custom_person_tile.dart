@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meu_aplicativo/models/pessoa.dart';
 import 'package:meu_aplicativo/widgets/custom_tile.dart';
-import 'package:meu_aplicativo/widgets/pessoaDialog.dart';
+import 'package:meu_aplicativo/widgets/pessoa_dialog.dart';
 
 class CustomPersonTile extends StatelessWidget {
   final Pessoa pessoa;
@@ -12,6 +12,7 @@ class CustomPersonTile extends StatelessWidget {
     return CustomTile(
       onTap: () {
         showDialog(
+          barrierDismissible: false,
           context: context,
           builder: (context) {
             return PessoaDialog(pessoa: pessoa);

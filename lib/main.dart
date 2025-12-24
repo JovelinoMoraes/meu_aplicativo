@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meu_aplicativo/widgets/lista_pessoas.dart';
+import 'package:meu_aplicativo/pages/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,11 +15,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: false,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        textTheme: TextTheme(
+          bodyMedium: TextStyle(color: Colors.black),
+          titleMedium: TextStyle(
+            color: Colors.black,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
-      home: Scaffold(
-        appBar: AppBar(title: Text("App em Flutter")),
-        body: ListaPessoas(),
-      ),
+      home: HomePage(),
     );
   }
 }
