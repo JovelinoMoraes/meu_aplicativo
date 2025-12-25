@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:meu_aplicativo/pages/home_page.dart';
+import 'package:meu_aplicativo/routes/router.dart';
+import 'package:meu_aplicativo/routes/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: Routes.initialRoute,
+      routes: routes,
       title: 'Flutter Demo',
       theme: ThemeData(
         useMaterial3: false,
@@ -24,7 +27,6 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: HomePage(),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:meu_aplicativo/pages/nova_pagina.dart';
+import 'package:meu_aplicativo/routes/routes.dart';
+import 'package:meu_aplicativo/extensions/extensions.dart';
 import 'package:meu_aplicativo/widgets/lista_pessoas.dart';
 
 class HomePage extends StatelessWidget {
@@ -12,14 +13,7 @@ class HomePage extends StatelessWidget {
       body: ListaPessoas(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(
-              builder: (context) {
-                return NovaPagina();
-              },
-            ),
-            (route) => false,
-          );
+          context.pushNamed(Routes.novaPagina);
         },
         child: Icon(Icons.navigate_next),
       ),
